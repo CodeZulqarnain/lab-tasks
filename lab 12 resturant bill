@@ -1,0 +1,69 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+// Function to display the menu
+void displayMenu() {
+    cout << "\nMenu:\n";
+    cout << "1. Burger - $5.99\n";
+    cout << "2. Pizza - $8.99\n";
+    cout << "3. Pasta - $7.49\n";
+    cout << "4. Salad - $4.99\n";
+    cout << "5. Soda - $1.99\n";
+    cout << "6. Exit\n";
+}
+
+// Function to calculate the cost of an item
+double calculateCost(double price, int quantity) {
+    return price * quantity;
+}
+
+// Function to calculate the final bill with tax/service charges
+double calculateFinalBill(double total) {
+    double tax = total * 0.10; // 10% tax
+    return total + tax;
+}
+
+int main() {
+    int choice, quantity;
+    double total = 0.0;
+    
+    while (true) {
+        displayMenu();
+        cout << "Enter the item number to order (or 6 to exit): ";
+        cin >> choice;
+        
+        if (choice == 6) {
+            break;
+        }
+        
+        if (choice < 1 || choice > 5) {
+            cout << "Invalid choice. Please try again.\n";
+            continue;
+        }
+        
+        cout << "Enter quantity: ";
+        cin >> quantity;
+        
+        double price;
+        switch (choice) {
+            case 1: price = 5.99; break;
+            case 2: price = 8.99; break;
+            case 3: price = 7.49; break;
+            case 4: price = 4.99; break;
+            case 5: price = 1.99; break;
+        }
+        
+        total += calculateCost(price, quantity);
+        cout << "Item added to bill.\n";
+    }
+    
+    double finalBill = calculateFinalBill(total);
+    cout << fixed << setprecision(2);
+    cout << "\nTotal amount before tax: $" << total << "\n";
+    cout << "Total amount after tax (10%): $" << finalBill << "\n";
+    cout << "Thank you for dining with us!\n";
+    
+    return 0;
+}
