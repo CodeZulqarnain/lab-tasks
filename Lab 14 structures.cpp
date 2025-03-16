@@ -2,7 +2,7 @@
 using namespace std;
 
 
-//++++++++++++++++++++++++++++++++++++++++++++++ Task 1 function in struct ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Task 1 function in struct 
 
 
 	struct stdname{
@@ -19,9 +19,9 @@ using namespace std;
 int main(){
 	//first srudnet
 	stdname student1;
-	student1.firstname="Saqlain";
-	student1.lastname="Mushtaq";
-	student1.rollno=35;
+	student1.firstname="zulqarnain ";
+	student1.lastname="mohiuddin";
+	student1.rollno=07;
 	student1.marks=88;
 	//second student
 	stdname student2;
